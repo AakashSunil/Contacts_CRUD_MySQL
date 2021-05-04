@@ -55,7 +55,7 @@ export default function ContactsList() {
     if(data.trim() === "")
     {
       try {
-				const res = await fetch('http://localhost:3001/contacts');
+				const res = await fetch('/contacts');
 				const contacts = await res.json();
 				createRows(contacts)
 			} catch (error) {
@@ -65,7 +65,7 @@ export default function ContactsList() {
   }
   const handleSearch = async (data) => {
     try {
-				const res = await fetch('http://localhost:3001/contacts/search/'+ data);
+				const res = await fetch('/contacts/search/'+ data);
 				const contacts = await res.json();
         createRows(contacts)
 		} catch (error) {
@@ -78,7 +78,7 @@ export default function ContactsList() {
   React.useEffect(() => {	
 		(async () => {
 			try {
-				const res = await fetch('http://localhost:3001/contacts');
+				const res = await fetch('/contacts');
 				const contacts = await res.json();
 				createRows(contacts)
 			} catch (error) {
