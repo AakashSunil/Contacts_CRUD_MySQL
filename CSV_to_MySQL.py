@@ -38,10 +38,15 @@ def InsertIntoTableNames(dict_data):
     InsertIntoRest(dict_data)
     
 try:
-    connection = mysql.connector.connect(host='127.0.0.1',
-                                         database='contacts',
-                                         user='root',
-                                         password='Database123!@#',
+    # connection = mysql.connector.connect(host='127.0.0.1',
+    #                                      database='contacts',
+    #                                      user='root',
+    #                                      password='Database123!@#',
+    #                                      auth_plugin='mysql_native_password')
+    connection = mysql.connector.connect(host='y5svr1t2r5xudqeq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+                                         database='ggoz1bfr45i2r7lw',
+                                         user='w5dxylg2ia3y1r8g',
+                                         password='wnclr7vhbgx0akak',
                                          auth_plugin='mysql_native_password')
     if connection.is_connected():
         db_Info = connection.get_server_info()
