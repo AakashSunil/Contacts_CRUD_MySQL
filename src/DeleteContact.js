@@ -68,7 +68,7 @@ const createData = (id,names, addresses, phones, dates, edit,deleted) => {
   React.useEffect(() => {	
 		(async () => {
 			try {
-				const res = await fetch('http://localhost:3001/contacts/'+details);
+				const res = await fetch('https://contacts-mysql-data.herokuapp.com/contacts/'+details);
 				const contacts = await res.json();
         console.log(contacts);
         createRows(contacts)
@@ -80,7 +80,7 @@ const createData = (id,names, addresses, phones, dates, edit,deleted) => {
   
   const handleClick = (choice) => {
     if(choice === 'Delete') {
-      fetch('http://localhost:3001/contacts/'+contact.id,{
+      fetch('https://contacts-mysql-data.herokuapp.com/contacts/'+contact.id,{
         method: 'DELETE',
         headers: {
           Accept: 'application/json',

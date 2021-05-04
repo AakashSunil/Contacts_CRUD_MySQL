@@ -85,7 +85,7 @@ export default function AddContactForm() {
     }
     if(choice === 'Insert') {
 
-      var response = await fetch('http://localhost:3001/contacts/'+0, {
+      var response = await fetch('https://contacts-mysql-data.herokuapp.com/contacts/'+0, {
         method: 'POST',
         body: JSON.stringify(contact_body),
         headers: {

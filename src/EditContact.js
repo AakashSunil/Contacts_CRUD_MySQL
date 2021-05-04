@@ -98,7 +98,7 @@ export default function EditContact() {
   React.useEffect(() => {	
 		(async () => {
 			try {
-				const res = await fetch('http://localhost:3001/contacts/'+details);
+				const res = await fetch('https://contacts-mysql-data.herokuapp.com/contacts/'+details);
 				const contacts = await res.json();
         createRows(contacts)
 			} catch (error) {
@@ -133,7 +133,7 @@ export default function EditContact() {
     console.log(contact_body);
 
     if(choice === 'Update') {
-      var response = await fetch('http://localhost:3001/contacts/update/'+contact, {
+      var response = await fetch('https://contacts-mysql-data.herokuapp.com/contacts/update/'+contact, {
         method: 'PUT',
         body: JSON.stringify(contact_body),
         headers: {
