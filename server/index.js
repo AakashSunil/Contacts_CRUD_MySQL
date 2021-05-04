@@ -4,7 +4,7 @@ const express = require('express');
 var app = express()
 var cors = require('cors')
 const bodyParser = require('body-parser')
-
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 app.use(cors())
 
@@ -28,7 +28,7 @@ var mysqlConnection = mysql.createConnection({
 // })
 mysqlConnection.connect((err) => {
     if(!err) {
-        console.log('DB Connection Successful')
+        console.log('DB Connection Successful',mysqlConnection)
     } 
     else {
         console.log('DB Connection failed \n Error: '+ JSON.stringify(err,undefined,2));
