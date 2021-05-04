@@ -7,14 +7,25 @@ const bodyParser = require('body-parser')
 
 app.use(bodyParser.json())
 app.use(cors())
+
+// Heroku JawsDB || Local DB
 var mysqlConnection = mysql.createConnection({
-    host:'127.0.0.1',
-    user: 'root',
-    password: 'Database123!@#',
-    database: 'contacts',
+    host:'y5svr1t2r5xudqeq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com' || '127.0.0.1',
+    user: 'w5dxylg2ia3y1r8g' || 'root',
+    password: 'wnclr7vhbgx0akak' || 'Database123!@#',
+    database: 'ggoz1bfr45i2r7lw' || 'contacts',
     multipleStatements: true,
     
 })
+// Local DB
+// var mysqlConnection = mysql.createConnection({
+//     host:'127.0.0.1',
+//     user: 'root',
+//     password: 'Database123!@#',
+//     database: 'contacts',
+//     multipleStatements: true,
+    
+// })
 mysqlConnection.connect((err) => {
     if(!err) {
         console.log('DB Connection Successful')
