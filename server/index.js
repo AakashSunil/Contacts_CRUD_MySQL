@@ -10,10 +10,10 @@ app.use(cors())
 
 // Heroku JawsDB || Local DB
 var mysqlConnection = mysql.createConnection({
-    host:'y5svr1t2r5xudqeq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com' || '127.0.0.1',
-    user: 'w5dxylg2ia3y1r8g' || 'root',
-    password: 'wnclr7vhbgx0akak' || 'Database123!@#',
-    database: 'ggoz1bfr45i2r7lw' || 'contacts',
+    host:'y5svr1t2r5xudqeq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    user: 'w5dxylg2ia3y1r8g',
+    password: 'wnclr7vhbgx0akak',
+    database: 'ggoz1bfr45i2r7lw',
     multipleStatements: true,
     
 })
@@ -34,7 +34,10 @@ mysqlConnection.connect((err) => {
         console.log('DB Connection failed \n Error: '+ JSON.stringify(err,undefined,2));
     }
 })
- app.listen(3001,()=>{console.log('Express Server is running at port 3001')})
+
+const PORT = process.env.PORT || 3001
+
+app.listen(PORT,()=>{console.log('Express Server is running at port 3001')})
 
 
 //Landing Page - List of Contacts
