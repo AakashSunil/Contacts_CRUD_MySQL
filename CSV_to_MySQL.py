@@ -41,7 +41,8 @@ try:
     connection = mysql.connector.connect(host='127.0.0.1',
                                          database='contacts',
                                          user='root',
-                                         password='password')
+                                         password='Database123!@#',
+                                         auth_plugin='mysql_native_password')
     if connection.is_connected():
         db_Info = connection.get_server_info()
         print("Connected to MySQL Server version ", db_Info)

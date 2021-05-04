@@ -10,9 +10,10 @@ app.use(cors())
 var mysqlConnection = mysql.createConnection({
     host:'127.0.0.1',
     user: 'root',
-    password: 'password',
+    password: 'Database123!@#',
     database: 'contacts',
-    multipleStatements: true
+    multipleStatements: true,
+    
 })
 mysqlConnection.connect((err) => {
     if(!err) {
